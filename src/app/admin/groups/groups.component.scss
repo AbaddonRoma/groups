@@ -1,0 +1,10 @@
+.nav-flex-container{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fff;
+    input{
+        margin: 0.8em;
+    } 
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}

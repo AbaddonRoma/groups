@@ -1,0 +1,59 @@
+<section>
+  <div class="container-fluid">
+    <!-- Page Header-->
+    <header> 
+      <h1 class="h3 display">Предмети</h1>
+    </header>
+    <div class="nav-flex-container">
+      <input type="button" class="btn btn-default" value="Додати групу" id="addGroup">
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-striped table-hover">
+                <thead>
+                  <th>№</th>
+                  <th>Назва групи</th>
+                  <th>Факультет</th>
+                  <th>Спецільність</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let group of groups; let i = index;">
+                    <th>{{(i+1)}}</th>
+                    <td>{{group.group_name}}</td>
+                    <td>{{group.faculty_id}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<button (click)="click()" style="margin-top:100px">logIn</button>
+      <div *ngIf="this.groupsService.newPost">
+        <div> {{ this.groupsService.newPost  | async | json}} </div>
+      </div>
+
+      <button (click)="getGroup()">Rec</button>
+      <div *ngIf="groups">
+        <div> {{ groups | json }} </div>
+      </div>
+
+      <button (click)="getFaculties()">Faculties</button>
+      <div *ngIf="faculties">
+        <div> {{ faculties | json }} </div>
+      </div>
+
+      <button (click)="getSpecialties()">Faculties</button>
+      <div *ngIf="specialties">
+        <div> {{ specialties | json }} </div>
+      </div>
+
+      <button (click)="getTable()">Table</button>
+      
